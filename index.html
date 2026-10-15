@@ -143,6 +143,114 @@
     .process .section-head .eyebrow,
     .process .section-head h2,
     .process .section-head p { color: #075083 !important; }
+
+
+    /* Refined motion system: reveal, stagger, hover, and ambient lighting */
+    :root { --motion-ease: cubic-bezier(.2,.72,.25,1); }
+    html { scroll-behavior: smooth; }
+    section[id] { scroll-margin-top: 92px; }
+    .hero { isolation:isolate; }
+    .hero::before {
+      content:""; position:absolute; z-index:-1; inset:-18% -10%; pointer-events:none;
+      background:radial-gradient(ellipse at 76% 28%,rgba(255,178,206,.24),transparent 34%),
+                 radial-gradient(ellipse at 18% 76%,rgba(123,202,242,.22),transparent 36%);
+      background-size:140% 140%; animation:ambientGlow 16s ease-in-out infinite alternate;
+    }
+    .reveal { opacity:0; transform:translate3d(0,24px,0); transition:opacity .72s var(--motion-ease),transform .72s var(--motion-ease); transition-delay:var(--reveal-delay,0ms); will-change:opacity,transform; }
+    .reveal.visible { opacity:1; transform:translate3d(0,0,0); }
+    .service-card,.process-card,.timeline-item,.tool-item,.trust-item,.commitment-points>div,.contact-panel,.contact-info,.contact-form {
+      transition:transform .32s var(--motion-ease),box-shadow .32s var(--motion-ease),border-color .32s ease,background-color .32s ease;
+    }
+    .service-card:hover,.process-card:hover,.timeline-item:hover,.trust-item:hover,.commitment-points>div:hover { transform:translateY(-5px); }
+    .tool-item:hover { transform:translateY(-4px) scale(1.015); box-shadow:0 12px 26px rgba(3,47,83,.10); }
+    .tool-symbol { transition:transform .35s var(--motion-ease); }
+    .tool-item:hover .tool-symbol { transform:rotate(-5deg) scale(1.06); }
+    .service-icon { transition:transform .35s var(--motion-ease); }
+    .service-card:hover .service-icon { transform:translateY(-3px) rotate(-4deg); }
+    .btn { transition:transform .25s var(--motion-ease),box-shadow .25s ease,background-color .25s ease,filter .25s ease; }
+    .btn:hover { filter:brightness(1.04); }
+    .brand-mark { transition:transform .35s var(--motion-ease),box-shadow .35s ease; }
+    .brand:hover .brand-mark { transform:rotate(-7deg) scale(1.05); box-shadow:0 8px 22px rgba(245,108,166,.24); }
+    .nav-links a:not(.btn),.footer-links a,.service-link,.contact-link,.back-top { transition:color .22s ease,opacity .22s ease,transform .22s var(--motion-ease),background-color .22s ease; }
+    .nav-links a:not(.btn):hover,.footer-links a:hover { transform:translateY(-1px); }
+    .back-top:hover { transform:translateY(-3px); background:#f56ca6; color:#fff; border-color:#f56ca6; }
+    .art-card { transition:transform .5s var(--motion-ease),box-shadow .5s ease; }
+    .art-card:hover { transform:translateY(-4px) rotate(-1deg); box-shadow:0 30px 78px rgba(7,80,131,.17); }
+    .floating-chip { animation:floatChip 7s ease-in-out infinite; }
+    .floating-chip:nth-of-type(2n) { animation-delay:-2.8s; }
+    .menu-toggle { transition:transform .25s var(--motion-ease),background-color .25s ease,color .25s ease; cursor:pointer; }
+    .menu-toggle:hover { transform:scale(1.04); background:#f56ca6; color:#fff; }
+    @keyframes ambientGlow { from { transform:translate3d(-1%,0,0) scale(1); opacity:.75; } to { transform:translate3d(1.5%,1%,0) scale(1.06); opacity:1; } }
+    @keyframes floatChip { 0%,100% { translate:0 0; } 50% { translate:0 -7px; } }
+    /* Animated mobile menu; visibility and pointer events prevent invisible links being tapped. */
+    @media (max-width:620px) {
+      .nav-links { display:flex !important; visibility:hidden; opacity:0; pointer-events:none; transform:translateY(-9px) scale(.985); transform-origin:top center; max-height:0; overflow:hidden; padding:0 16px !important; transition:opacity .24s ease,transform .24s var(--motion-ease),visibility .24s ease,max-height .3s ease,padding .3s ease; }
+      .nav-links.open { visibility:visible; opacity:1; pointer-events:auto; transform:translateY(0) scale(1); max-height:80vh; overflow-y:auto; padding:16px !important; }
+      .nav-links a { opacity:0; transform:translateY(-4px); transition:opacity .22s ease,transform .22s var(--motion-ease); }
+      .nav-links.open a { opacity:1; transform:translateY(0); }
+      .nav-links.open a:nth-child(1) { transition-delay:40ms; }
+      .nav-links.open a:nth-child(2) { transition-delay:70ms; }
+      .nav-links.open a:nth-child(3) { transition-delay:100ms; }
+      .nav-links.open a:nth-child(4) { transition-delay:130ms; }
+      .nav-links.open a:nth-child(5) { transition-delay:160ms; }
+      .nav-links.open a:nth-child(6) { transition-delay:190ms; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      html { scroll-behavior:auto !important; }
+      *,*::before,*::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important; }
+      .reveal { opacity:1 !important; transform:none !important; }
+    }
+
+  
+
+    /* Mobile-first layout repair: prevent the hero and page sections from being clipped horizontally. */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { width: 100%; max-width: 100%; overflow-x: clip; -webkit-text-size-adjust: 100%; }
+    body { width: 100%; max-width: 100%; margin: 0; overflow-x: clip; }
+    img, svg, video, canvas, iframe { max-width: 100%; }
+    .container, main, header, footer, section { min-width: 0; max-width: 100%; }
+    .container { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
+    .hero-grid > *, .about-grid > *, .contact-panel > *, .contact-info, .contact-form { min-width: 0; }
+    .hero h1, h1, h2, h3, p, a, button { overflow-wrap: anywhere; }
+    .hero-art { min-width: 0; max-width: 100%; }
+    @media (max-width: 720px) {
+      .container { width: calc(100% - 36px) !important; max-width: 560px; }
+      .nav { width: 100%; max-width: 100%; padding-inline: 0; }
+      .nav .container, .nav-inner { width: calc(100% - 32px) !important; }
+      .hero { width: 100%; max-width: 100%; padding: 42px 0 48px !important; }
+      .hero-grid { display: grid !important; grid-template-columns: minmax(0, 1fr) !important; gap: 24px !important; width: 100%; }
+      .hero-grid > * { width: 100%; max-width: 100%; }
+      .hero h1 { font-size: clamp(2.15rem, 10.2vw, 3.35rem) !important; line-height: 1.08 !important; letter-spacing: -.035em; max-width: 100%; }
+      .hero-copy { font-size: 1rem !important; line-height: 1.65; max-width: 100%; }
+      .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+      .hero-actions .btn { width: auto !important; max-width: 100%; min-height: 46px; justify-content: center; }
+      .hero-art { min-height: 300px !important; height: auto; margin: 0 auto !important; overflow: hidden; }
+      .art-card { width: min(280px, 78vw) !important; max-width: calc(100% - 24px); }
+      .floating-chip, .chip-one, .chip-two { max-width: 46%; font-size: .72rem; }
+      .section { padding: 58px 0 !important; }
+      .service-grid, .about-grid, .tool-grid, .process-grid, .contact-panel, .form-grid { min-width: 0; }
+      .service-grid { grid-template-columns: minmax(0, 1fr) !important; }
+      .about-grid { grid-template-columns: minmax(0, 1fr) !important; }
+      .tool-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+      .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+      .contact-panel { grid-template-columns: minmax(0, 1fr) !important; }
+      .contact-info, .contact-form { padding: 22px !important; }
+      .footer-inner { gap: 18px; }
+    }
+    @media (max-width: 420px) {
+      .container { width: calc(100% - 28px) !important; }
+      .hero { padding-top: 34px !important; }
+      .hero h1 { font-size: clamp(2rem, 9.5vw, 2.65rem) !important; }
+      .hero-actions { align-items: stretch; }
+      .hero-actions .btn { width: 100% !important; }
+      .hero-art { min-height: 270px !important; }
+      .process-grid, .tool-grid { grid-template-columns: minmax(0, 1fr) !important; }
+      .contact-info, .contact-form { padding: 18px !important; }
+      .nav-links { left: 14px !important; right: 14px !important; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto !important; }
+    }
 </style>
 </head>
 <body>
@@ -295,23 +403,57 @@
     <div class="footer-copy">© <span id="year"></span> Reinalyn Etulle. All rights reserved.</div><a class="back-top" href="#home" aria-label="Back to top">↑</a>
   </div></footer>
   <script>
-    const menuToggle=document.getElementById('menuToggle');
-    const navLinks=document.getElementById('navLinks');
-    menuToggle.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuToggle.setAttribute('aria-expanded',String(open));menuToggle.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu');menuToggle.textContent=open?'×':'☰';});
-    navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{navLinks.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');menuToggle.setAttribute('aria-label','Open navigation menu');menuToggle.textContent='☰';}));
-    document.getElementById('year').textContent=new Date().getFullYear();
-    const revealItems=document.querySelectorAll('.reveal');
-    if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-      const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}}),{threshold:.12});
-      revealItems.forEach(el=>observer.observe(el));
-    }else{revealItems.forEach(el=>el.classList.add('visible'));}
-    document.getElementById('contactForm').addEventListener('submit',function(e){
-      e.preventDefault(); if(!this.reportValidity()) return;
-      const d=new FormData(this);
-      const subject=encodeURIComponent('Work inquiry — '+d.get('service'));
-      const body=encodeURIComponent('Hello Reinalyn,\n\nI would like to discuss your support services.\n\nName: '+d.get('name')+'\nEmail: '+d.get('email')+'\nCompany: '+(d.get('company')||'Not provided')+'\nService needed: '+d.get('service')+'\n\nProject details:\n'+d.get('details')+'\n\nThank you.');
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    const mobileQuery = window.matchMedia('(max-width: 620px)');
+
+    function setMenu(open) {
+      navLinks.classList.toggle('open', open);
+      menuToggle.setAttribute('aria-expanded', String(open));
+      menuToggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+      menuToggle.textContent = open ? '×' : '☰';
+    }
+    menuToggle.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', event => { if (event.key === 'Escape') setMenu(false); });
+    document.addEventListener('click', event => {
+      if (mobileQuery.matches && navLinks.classList.contains('open') && !navLinks.contains(event.target) && !menuToggle.contains(event.target)) setMenu(false);
+    });
+    mobileQuery.addEventListener?.('change', () => setMenu(false));
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // Stagger cards/items within each grid for a more intentional reveal rhythm.
+    document.querySelectorAll('.service-grid, .tool-grid, .process-grid, .timeline, .commitment-points').forEach(group => {
+      const items = group.querySelectorAll('.service-card, .tool-item, .process-card, .timeline-item, .commitment-points > div');
+      items.forEach((item, index) => {
+        item.classList.add('reveal');
+        item.style.setProperty('--reveal-delay', `${(index % 4) * 85}ms`);
+      });
+    });
+    const revealItems = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window && !reduceMotion) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -35px 0px' });
+      revealItems.forEach(el => observer.observe(el));
+    } else {
+      revealItems.forEach(el => el.classList.add('visible'));
+    }
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (!this.reportValidity()) return;
+      const d = new FormData(this);
+      const subject = encodeURIComponent('Work inquiry — ' + d.get('service'));
+      const body = encodeURIComponent('Hello Reinalyn,\n\nI would like to discuss your support services.\n\nName: ' + d.get('name') + '\nEmail: ' + d.get('email') + '\nCompany: ' + (d.get('company') || 'Not provided') + '\nService needed: ' + d.get('service') + '\n\nProject details:\n' + d.get('details') + '\n\nThank you.');
       document.getElementById('formMessage').classList.add('show');
-      window.location.href='mailto:etullerein@gmail.com?subject='+subject+'&body='+body;
+      window.location.href = 'mailto:etullerein@gmail.com?subject=' + subject + '&body=' + body;
     });
   </script>
 </body>
