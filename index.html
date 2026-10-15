@@ -12,7 +12,7 @@
   <link rel="icon" type="image/svg+xml" href="assets/rein-mark.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{--ink:#27202b;--muted:#746b78;--pink:#e8a9c5;--pink-deep:#b95183;--pink-light:#fff0f6;--lilac:#c9c4ff;--paper:#fffafc;--white:#fff;--line:#f0e2eb;--dark:#28212d;--shadow:0 18px 55px rgba(93,42,72,.10);--radius:24px}
     *{box-sizing:border-box} html{scroll-behavior:smooth;scroll-padding-top:88px} body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif;line-height:1.65;overflow-x:hidden} h1,h2,h3,h4{font-family:Manrope,sans-serif;line-height:1.12;letter-spacing:-.04em;margin:0} h1{font-size:clamp(2.8rem,6.6vw,5.7rem);font-weight:800;max-width:800px} h2{font-size:clamp(2rem,4.4vw,3.45rem);font-weight:800} h3{font-size:1.22rem} p{margin:0;color:var(--muted)} a{color:inherit;text-decoration:none} button,input,select,textarea{font:inherit} button,a{ -webkit-tap-highlight-color:transparent}
@@ -33,7 +33,117 @@
     @media(max-width:960px){.hero-grid{grid-template-columns:1fr  .82fr;gap:25px}.hero-art{min-height:390px}.service-grid{grid-template-columns:repeat(2,1fr)}.about-grid{gap:40px}.tool-grid{grid-template-columns:repeat(3,1fr)}.process-grid{grid-template-columns:repeat(2,1fr)}.contact-info,.contact-form{padding:32px}}
     @media(max-width:720px){.container{width:min(100% - 32px,560px)}.section{padding:76px 0}.nav{height:70px}.menu-toggle{display:block}.nav-links{display:none;position:absolute;top:70px;left:16px;right:16px;padding:16px;background:#fffdfd;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch;gap:0}.nav-links.open{display:flex}.nav-links a{padding:12px 10px}.nav-links .btn{margin-top:8px}.nav-links .mobile-cv-link{display:inline-flex;justify-content:center;margin-top:8px}.nav-actions>.btn{display:none}.hero{padding:58px 0 64px}.hero-grid{grid-template-columns:1fr}.hero h1{font-size:clamp(2.7rem,12vw,4.4rem)}.hero-art{min-height:370px;margin-top:0}.art-card{width:min(320px,82%)}.chip-one{right:1%}.chip-two{left:1%}.trust-inner{justify-content:center}.trust-label{width:100%;text-align:center}.trust-item{font-size:.78rem}.service-grid{grid-template-columns:1fr}.service-card{min-height:unset}.about-grid{grid-template-columns:1fr;gap:34px}.about-visual{min-height:350px;max-width:430px;width:100%;margin:auto}.about-photo-frame{height:330px;width:72%}.about-points{grid-template-columns:1fr}.tool-grid{grid-template-columns:repeat(2,1fr)}.tool-item{padding:13px 11px;gap:9px}.tool-symbol{flex-basis:33px;height:33px}.tool-item strong{font-size:.78rem}.timeline-item{grid-template-columns:1fr;gap:7px;padding-bottom:30px}.timeline-item:not(:last-child):before{left:5px;top:42px}.timeline-date{padding-left:28px}.timeline-content{padding-left:28px}.process-grid{grid-template-columns:1fr 1fr}.contact-panel{grid-template-columns:1fr}.contact-info,.contact-form{padding:27px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.footer-inner{justify-content:center;text-align:center}.footer-links{justify-content:center}}
     @media(max-width:400px){.process-grid{grid-template-columns:1fr}.tool-grid{grid-template-columns:1fr}.hero-actions .btn{width:100%}}
-  </style>
+
+    /* Rein's editorial tile direction — inspired by the supplied reference */
+    :root{--ink:#073f70;--muted:#416987;--pink:#f56ca6;--pink-deep:#e64c8b;--pink-light:#ffedf5;--lilac:#a8dfff;--paper:#075083;--white:#fff;--line:#b9e3f8;--dark:#064777;--shadow:0 12px 0 rgba(3,47,83,.08);--radius:27px}
+    html{scroll-padding-top:90px} body{background:#075083;color:#fff;font-family:'Playfair Display',Georgia,serif;line-height:1.55} h1,h2,h3,h4,.brand,.btn,.eyebrow,.nav-links,.status,.mini-label,.art-title,.progress-row,.floating-chip,.trust-label,.trust-item,.service-link,.tool-item,.timeline-date,.step-num,.field label,.contact-link,button,input,select,textarea{font-family:'Playfair Display',Georgia,serif;letter-spacing:normal} h1,h2,h3,h4{letter-spacing:-.025em;font-weight:600} p{color:inherit;opacity:.84} a{transition:opacity .2s,transform .2s}
+    .container{width:min(1320px,calc(100% - 48px))}.section{padding:78px 0}.section-head{margin-bottom:32px}.section-head h2{margin:10px 0 12px}.eyebrow{color:#ffd6e7;letter-spacing:.13em;font-size:.78rem}.eyebrow:before{background:currentColor}
+    .nav-wrap{background:#064777;border-bottom:1px solid #ffffff25;backdrop-filter:blur(12px)}.nav{height:76px}.brand{color:#fff;font-weight:600}.brand-mark{background:#fff;color:#f05d98;box-shadow:none;border-radius:17px}.brand small{color:#b9e3f8}.nav-links{color:#fff;gap:22px}.nav-links a:not(.btn):hover{color:#ffc7dd}.menu-toggle{color:#074a7d;border:0}.btn{border-radius:999px;padding:12px 19px;box-shadow:none!important}.btn-primary{background:#f56ca6;color:#fff}.btn-primary:hover{background:#e94e91}.btn-light{background:#fff;color:#075083;border-color:#fff}.btn-pink{background:#ffb2ce;color:#074777}
+    .hero{padding:42px 0 54px;background:#075083;overflow:hidden}.hero-grid{gap:30px;grid-template-columns:1.05fr .95fr}.hero h1{font-size:clamp(3rem,6vw,5.7rem);line-height:1.02;font-weight:600;max-width:760px}.hero h1 span{background:none;color:#ff83b2;-webkit-text-fill-color:#ff83b2}.hero-copy{font-size:1.1rem;max-width:570px;margin:22px 0 26px;color:#e7f5ff}.status{background:#fff;color:#075083;border:0;border-radius:999px}.pulse{background:#f56ca6;box-shadow:0 0 0 5px #f56ca633}.hero-note{color:#d9efff}.hero-note strong{color:#fff}.avatar-stack span{border-color:#075083;background:#ffb2ce;color:#074777}.avatar-stack span:first-child{background:#9bdcff}.hero-art{min-height:420px}.art-halo{width:min(390px,92%);border-radius:30px;background:#7dc9f2;filter:none}.art-card{border:0;background:#f56ca6;color:#fff;box-shadow:none;border-radius:30px;transform:rotate(2deg);width:min(340px,85%)}.art-desc{color:#fff}.mini-label{color:#fff}.spark{background:#fff;color:#075083}.progress-line{background:#ffd1e3}.progress-line span{background:#075083}.floating-chip{border:0;border-radius:20px;box-shadow:none;color:#075083;background:#fff}.floating-chip .chip-icon{background:#ffd9e8}.chip-one{right:-2%}.chip-two{left:-2%}
+    .trust-strip{background:#064777;border-color:#ffffff25}.trust-label{color:#b7def5}.trust-item{color:#fff}.trust-item i{color:#ff9fc3}
+    .services{background:#075083}.service-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.service-card{background:#7bcaf2;color:#064777;border:0;border-radius:28px;min-height:255px;padding:27px;box-shadow:none}.service-card:nth-child(3n+2){background:#f56ca6;color:#fff}.service-card:nth-child(3n){background:#fff;color:#075083}.service-card:hover{transform:translateY(-4px) rotate(-.4deg);box-shadow:none;border:0}.service-card p{color:inherit}.service-icon{background:#fff;color:#075083;border-radius:16px}.service-link{color:inherit;border-bottom:1px solid currentColor;padding-bottom:2px}
+    .about{background:#064777}.about-grid{gap:50px}.about-blob{background:#f56ca6;border-radius:30px 95px 30px 95px}.about-monogram{background:#fff;border:0;box-shadow:none;border-radius:28px}.monogram{background:none;color:#f56ca6;-webkit-text-fill-color:#f56ca6}.monogram-caption{color:#075083}.about-sticker{background:#7bcaf2;color:#064777;border:0;box-shadow:none}.about-sticker span{color:#075083}.about-photo-frame{border:6px solid #fff;box-shadow:none}.about-copy p{color:#e3f3ff}.about-point{color:#fff}.about-point b{background:#ffb2ce;color:#075083}
+    .tools{background:#7bcaf2;color:#064777}.tools .section-head p{color:#174e74}.tools .eyebrow{color:#075083}.tool-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.tool-item{border:1px solid #ffffff8a;border-radius:20px;background:#ffffff80;color:#075083}.tool-item:hover{background:#fff;transform:translateY(-3px);border-color:#fff}.tool-symbol{background:#f56ca6;color:#fff;border-radius:13px}.tool-item small,.tools-note{color:#285c7d}
+    .experience{background:#fff;color:#075083}.experience p{color:#416987}.timeline-item:not(:last-child):before{background:#b9e3f8}.timeline-date{color:#e64c8b}.timeline-item h3{color:#075083}
+    .process{background:#075083}.process-grid{gap:14px}.process-card{background:#7bcaf2;color:#064777;border:0;border-radius:27px;box-shadow:none}.process-card:nth-child(even){background:#f56ca6;color:#fff}.process-card p{color:inherit}.step-num{color:inherit;opacity:.75}
+    .contact{background:#064777}.contact-panel{background:#fff;color:#075083;border:0;border-radius:32px;box-shadow:none;overflow:hidden}.contact-info p{color:#416987}.contact-info .eyebrow{color:#e64c8b}.contact-links{gap:12px}.contact-link{background:#e7f6ff;color:#075083;border:0;border-radius:15px}.contact-icon{background:#f56ca6;color:#fff;border-radius:10px}.contact-form{background:#f3faff}.field label{color:#075083}.field input,.field select,.field textarea{background:#fff;border:1px solid #c6e6f8;border-radius:13px;color:#075083;font-family:'Playfair Display',Georgia,serif}.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid #f56ca6;border-color:#f56ca6}.form-note{color:#52728a}.form-message{color:#075083}
+    footer{background:#053d68;color:#fff;border-top:1px solid #ffffff20}.footer-links a{color:#d6edfb}.footer-copy{color:#b9d8ec}.back-top{background:#f56ca6;color:#fff;border-radius:50%}
+    .reveal{transition:opacity .55s ease,transform .55s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+    @media(max-width:900px){.hero-grid,.about-grid{grid-template-columns:1fr;gap:28px}.hero-art{min-height:390px}.service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.tool-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.about-visual{min-height:350px}.about-photo-frame{height:320px}}
+    @media(max-width:620px){.container{width:min(100% - 28px,1320px)}.section{padding:56px 0}.nav{height:68px}.nav-links{background:#064777;border:1px solid #ffffff30;border-radius:20px;box-shadow:none}.hero{padding:34px 0 40px}.hero h1{font-size:clamp(2.7rem,13vw,4.4rem)}.hero-art{min-height:340px}.art-card{padding:22px}.floating-chip{font-size:.73rem;padding:10px 12px}.service-grid{grid-template-columns:1fr}.service-card{min-height:0}.tool-grid{grid-template-columns:1fr 1fr}.tool-item{padding:13px 12px;gap:9px}.tool-item strong{font-size:.78rem}.timeline-item{grid-template-columns:1fr;gap:7px;padding-bottom:25px}.timeline-item:not(:last-child):before{display:none}.about-points{grid-template-columns:1fr}.contact-panel{border-radius:24px}.contact-form{padding:22px!important}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+
+
+    /* Social-inspired portfolio refresh: a personal profile + editorial feed, not a generic template */
+    :root{--feed:#eaf6fd;--feed-card:#fff;--feed-blue:#075083;--feed-pink:#f56ca6;--feed-sky:#7bcaf2}
+    html{scroll-padding-top:86px}
+    body{background:var(--feed);color:#073f70}
+    .nav-wrap{background:rgba(6,71,119,.96);border-bottom:1px solid #ffffff25}
+    .nav{max-width:1320px}
+    .container{width:min(1120px,calc(100% - 40px))}
+    main{padding:22px 0 40px}
+    .section,.hero{width:min(1120px,calc(100% - 40px));margin:18px auto;border-radius:26px;overflow:hidden}
+    .section{padding:54px 0}
+    .section>.container,.hero>.container{width:calc(100% - 56px)}
+    .hero{padding:36px 0 38px;box-shadow:0 8px 28px rgba(7,80,131,.09)}
+    .hero-grid{grid-template-columns:1.08fr .92fr;gap:24px}
+    .hero-art{min-height:390px}
+    .trust-strip{width:min(1120px,calc(100% - 40px));margin:18px auto;border-radius:18px;border:0;box-shadow:0 5px 18px rgba(7,80,131,.06)}
+    .section-head{max-width:740px}
+    .service-card{box-shadow:0 5px 0 rgba(3,47,83,.04)}
+    .about-grid{gap:40px}
+    .tools{border-radius:26px}
+    .experience{box-shadow:0 6px 22px rgba(7,80,131,.06)}
+    .process{background:#dff2fc}
+    .contact{background:#dff2fc}
+    .contact-panel{box-shadow:0 10px 32px rgba(7,80,131,.1)}
+    .commitment{background:#fff;border:1px solid #c6e6f8;box-shadow:0 6px 22px rgba(7,80,131,.06)}
+    .commitment-post{max-width:880px;margin:0 auto;padding:0 4px}
+    .post-author{display:flex;align-items:center;gap:12px;margin-bottom:26px}
+    .post-avatar{display:grid;place-items:center;width:46px;height:46px;border-radius:16px;background:#075083;color:#fff;font-size:1.1rem}
+    .post-author strong,.post-author small{display:block}
+    .post-author strong{font-size:.95rem}
+    .post-author small{font-size:.76rem;color:#66839a;margin-top:2px}
+    .post-pin{margin-left:auto;color:#e64c8b;font-size:1.2rem}
+    .commitment h2{font-size:clamp(2rem,4vw,3.1rem);margin:12px 0 16px;max-width:760px}
+    .commitment-post>p{color:#416987;max-width:790px;font-size:1rem}
+    .commitment-points{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:28px 0}
+    .commitment-points>div{background:#f1f9fe;border:1px solid #d7edf9;border-radius:19px;padding:20px}
+    .commitment-points span{display:block;color:#e64c8b;font-size:.78rem;font-weight:700;margin-bottom:12px}
+    .commitment-points strong{display:block;font-size:1rem;margin-bottom:8px}
+    .commitment-points p{color:#416987;font-size:.86rem}
+    .post-footer{display:flex;gap:10px;flex-wrap:wrap;padding-top:18px;border-top:1px solid #dceef8}
+    .post-footer span{font-size:.77rem;font-weight:700;color:#075083;background:#eaf6fd;border-radius:999px;padding:8px 12px}
+    footer{margin-top:24px}
+    @media(max-width:900px){.section,.hero,.trust-strip{width:calc(100% - 28px)}.section>.container,.hero>.container{width:calc(100% - 36px)}.commitment-points{grid-template-columns:1fr}}
+    @media(max-width:620px){main{padding-top:10px}.section,.hero{margin:12px auto;border-radius:20px}.section{padding:38px 0}.hero{padding:28px 0}.section>.container,.hero>.container{width:calc(100% - 32px)}.commitment-points>div{padding:17px}.post-author{margin-bottom:20px}}
+
+  
+    /* Accessibility: clearer light titles on dark sections */
+    .tools .section-head h2,
+    .tools .section-head h3,
+    .tools .section-head p,
+    .tools .section-head .eyebrow,
+    .footer h2,
+    .footer h3,
+    .footer p,
+    .footer .eyebrow {
+      color: #ffffff !important;
+    }
+    .tools .section-head p,
+    .footer p { color: #f4f8fc !important; }
+    .tools .section-head .eyebrow,
+    .footer .eyebrow { color: #ffe2ef !important; }
+
+
+    /* Requested light text for dark-background headline areas */
+    .hero h1,
+    .hero h1 span,
+    .hero .hero-title,
+    .hero .hero-subtitle,
+    .hero p,
+    .hero .eyebrow,
+    .section-head h2,
+    .section-head p,
+    .section-head .eyebrow {
+      color: #ffffff !important;
+    }
+    .hero p,
+    .section-head p { color: #f5f9fc !important; }
+    .hero .eyebrow,
+    .section-head .eyebrow { color: #ffe5f0 !important; }
+
+
+    /* Readability fixes requested: keep the About headline white, and use dark blue text on light section backgrounds. */
+    .about-copy h2 { color: #ffffff !important; }
+    #experience .section-head .eyebrow,
+    #experience .section-head h2,
+    #experience .section-head p { color: #075083 !important; }
+    .process { background: #f3faff !important; color: #075083 !important; }
+    .process .section-head .eyebrow,
+    .process .section-head h2,
+    .process .section-head p { color: #075083 !important; }
+</style>
 </head>
 <body>
   <header class="nav-wrap">
@@ -124,8 +234,8 @@
         <article class="timeline-item reveal"><div class="timeline-date">Sep 2026 – Oct 2026</div><div class="timeline-content"><h3>Appointment Setter</h3><div class="timeline-company">B2B Website Development · Contract</div><p>Conducted outbound calls to business prospects interested in building or improving their websites, qualified leads, engaged decision-makers, identified business needs, and scheduled appointments.</p><div class="tag-list"><span class="tag">Outbound Calling</span><span class="tag">Lead Qualification</span><span class="tag">Appointment Setting</span></div></div></article>
         <article class="timeline-item reveal"><div class="timeline-date">Oct 2023 – Sep 2026</div><div class="timeline-content"><h3>Customer Service Representative</h3><div class="timeline-company">T-Mobile · IQOR Philippines</div><p>Handled high-volume inbound and outbound customer interactions through voice, email, and chat. Worked toward customer satisfaction, average handle time, and quality standards while supporting colleagues with process knowledge and customer-handling practices.</p><div class="tag-list"><span class="tag">Voice, Email & Chat</span><span class="tag">Quality Assurance</span><span class="tag">Issue Resolution</span></div></div></article>
         <article class="timeline-item reveal"><div class="timeline-date">Jun 2022 – Aug 2023</div><div class="timeline-content"><h3>Virtual Assistant</h3><div class="timeline-company">Freelance · Self-employed</div><p>Managed personal schedules and calendars, coordinated appointments and reminders, organized email, performed data entry, and prepared documents to help clients stay on top of daily priorities.</p><div class="tag-list"><span class="tag">Calendar Management</span><span class="tag">Email Organization</span><span class="tag">Admin Support</span></div></div></article>
-        <article class="timeline-item reveal"><div class="timeline-date">May 2021 – Mar 2022</div><div class="timeline-content"><h3>Customer Service Representative</h3><div class="timeline-company">Booking.com · Customer Support</div><p>Supported international travel customers through voice, chat, and email with bookings, itinerary changes, cancellations, and general travel inquiries. Processed booking modifications and maintained customer-focused service standards.</p><div class="tag-list"><span class="tag">Travel Support</span><span class="tag">Customer Care</span><span class="tag">Booking Changes</span></div></div></article>
-        <article class="timeline-item reveal"><div class="timeline-date">Nov 2019 – Dec 2020</div><div class="timeline-content"><h3>Sales Advisor</h3><div class="timeline-company">Sprint · Customer Support</div><p>Assisted customers with account concerns, service activation, billing inquiries, account updates, and technical troubleshooting. Recommended relevant products and services while documenting interactions and following company procedures.</p><div class="tag-list"><span class="tag">Customer Support</span><span class="tag">Troubleshooting</span><span class="tag">Sales Assistance</span></div></div></article>
+        <article class="timeline-item reveal"><div class="timeline-date">May 2021 – Mar 2022</div><div class="timeline-content"><h3>Customer Guest Specialist</h3><div class="timeline-company">Booking.com · TTEC Philippines</div><p>Supported international travel customers through voice, chat, and email with bookings, itinerary changes, cancellations, and general travel inquiries. Processed booking modifications and maintained customer-focused service standards.</p><div class="tag-list"><span class="tag">Travel Support</span><span class="tag">Customer Care</span><span class="tag">Booking Changes</span></div></div></article>
+        <article class="timeline-item reveal"><div class="timeline-date">Nov 2019 – Dec 2020</div><div class="timeline-content"><h3>Sales Advisor</h3><div class="timeline-company">Sprint · Concentrix Philippines</div><p>Assisted customers with account concerns, service activation, billing inquiries, account updates, and technical troubleshooting. Recommended relevant products and services while documenting interactions and following company procedures.</p><div class="tag-list"><span class="tag">Customer Support</span><span class="tag">Troubleshooting</span><span class="tag">Sales Assistance</span></div></div></article>
       </div>
       <div class="reveal" style="margin-top:4px;padding:22px 25px;border-radius:18px;background:#fff5fa;border:1px solid #f0dfe8;max-width:900px"><span class="eyebrow">Education</span><h3 style="margin:10px 0 5px">Asian Institute of Technology Sciences and The Arts</h3><p>Home Economics · 2017–2019</p></div>
     </div></section>
@@ -136,8 +246,24 @@
         <article class="process-card reveal"><div class="step-num">01</div><h3>Understand</h3><p>We discuss your priorities, workflows, customers, and the support you need most.</p></article>
         <article class="process-card reveal delay-1"><div class="step-num">02</div><h3>Organize</h3><p>We agree on responsibilities, communication channels, and clear expectations.</p></article>
         <article class="process-card reveal delay-2"><div class="step-num">03</div><h3>Support</h3><p>I handle agreed tasks with care, accuracy, and professional communication.</p></article>
-        <article class="process-card reveal delay-3"><div class="step-num">04</div><h3>Follow through</h3><p>I keep you informed, track outstanding items, and help maintain momentum.</p></article>
+        <article class="process-card reveal delay-3"><div class="step-num">04</div><h3>Review &amp; improve</h3><p>We check what is working, share feedback, and adjust the approach as priorities change.</p></article>
       </div>
+    </div></section>
+
+
+    <section class="section commitment" id="commitment"><div class="container">
+      <article class="commitment-post reveal">
+        <div class="post-author"><span class="post-avatar">R.</span><span><strong>Work with Rein</strong><small>My approach to working together · Pinned</small></span><span class="post-pin">✦</span></div>
+        <span class="eyebrow">Built for the long run</span>
+        <h2>Not just help with today’s tasks — a partner in your progress.</h2>
+        <p>I value long-term working relationships built on trust, consistency, and clear communication. My goal is to learn how your business works, understand what matters to you, and become dependable support you can count on as your needs grow.</p>
+        <div class="commitment-points">
+          <div><span>01</span><strong>Long-term commitment</strong><p>I focus on continuity, accountability, and building a working relationship that grows with your business.</p></div>
+          <div><span>02</span><strong>Quality in every detail</strong><p>I work carefully, follow agreed processes, and check my work so each task is handled with accuracy and care.</p></div>
+          <div><span>03</span><strong>Adapt as you grow</strong><p>I stay open to feedback and changing priorities so the support remains useful as your business evolves.</p></div>
+        </div>
+        <div class="post-footer"><span>♡ Consistency</span><span>✓ Quality-focused</span><span>↗ Long-term mindset</span></div>
+      </article>
     </div></section>
 
     <section class="section contact" id="contact"><div class="container">
